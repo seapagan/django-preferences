@@ -1,3 +1,4 @@
+"""Define the preferences Models."""
 from django.db import models
 from django.dispatch import receiver
 
@@ -6,23 +7,28 @@ from preferences.managers import SingletonManager
 
 
 class Preferences(models.Model):
+    """Define the preferences Model."""
+
     objects = models.Manager()
     singleton = SingletonManager()
 
     def __unicode__(self):
+        """Return the unicode representation of the model."""
         return self._meta.verbose_name_plural.capitalize()
 
     __str__ = __unicode__
 
     class Meta:
+        """Define the preferences Meta options."""
+
         abstract: True
 
 
 @receiver(models.signals.class_prepared)
 def preferences_class_prepared(sender, *args, **kwargs):
-    """
-    Adds various preferences members to preferences.preferences,
-    thus enabling easy access from code.
+    """Add various preferences members to preferences.preferences.
+
+    This enables easy access from code.
     """
     cls = sender
     if issubclass(cls, Preferences):
