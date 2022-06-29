@@ -11,12 +11,15 @@ Django Preferences
 .. image:: https://badge.fury.io/py/django-preferences.svg
     :target: https://badge.fury.io/py/django-preferences
 
+Note: This is a fork of the original django-preferences project at
+`praekelt/django-preferences <https://github.com/praekelt/django-preferences>`_, with the multi-site stuff removed due to not being
+needed and tbh, causing more issues than justified it's use.
+
 Provides singleton admin views for Preferences objects and a simple interface to preference values.
 Singleton views ensure only one preference instance per site is available for each ``Preferences`` class.
 
 ..
 
-    **Requires** and supports `Django's "sites" framework <https://docs.djangoproject.com/en/dev/ref/contrib/sites/>`_, which means you can have multiple preferences, each associated with a particular site.
 
 .. contents:: Contents
     :depth: 5
@@ -28,8 +31,6 @@ Requirements
 
 #. Django 1.11, 2.0, 2.1
 
-#. django.contrib.sites
-
 
 Installation
 ------------
@@ -38,7 +39,6 @@ Installation
 
 #. Add ``preferences`` to your ``INSTALLED APPS`` setting.
 
-#. Add ``django.contrib.sites`` to your ``INSTALLED APPS`` setting. django-preferences associates preferences to specific sites and thus requires Django's "sites" framework to be installed.
 
 #. Optionally, add ``preferences.context_processors.preferences_cp`` to your template option settings. This will automatically add a ``preferences`` variable to your template context::
 
@@ -83,4 +83,3 @@ Preferences can be accessed in Python by importing the ``preferences`` module an
 If you've specified the ``preferences.context_processors.preferences_cp`` as a `TEMPLATES <https://docs.djangoproject.com/en/1.11/topics/templates>`_ you can similarly access your preferences within templates through the ``preferences`` variable, i.e.::
 
     {{ preferences.MyPreferences.portal_contact_email }}
-
