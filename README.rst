@@ -12,11 +12,21 @@ Django Preferences
     :target: https://badge.fury.io/py/django-preferences
 
 Note: This is a fork of the original django-preferences project at
-`praekelt/django-preferences <https://github.com/praekelt/django-preferences>`_, with the multi-site stuff removed due to not being
-needed and tbh, causing more issues than justified it's use.
+`praekelt/django-preferences <https://github.com/praekelt/django-preferences>`_,
+with the multi-site stuff removed due to not being needed and tbh, causing more
+issues than justified it's use.
 
-Provides singleton admin views for Preferences objects and a simple interface to preference values.
-Singleton views ensure only one preference instance per site is available for each ``Preferences`` class.
+I have not uploaded to pypi, since this is not my project, however I may create
+a new entry (under a new name with full credit to original authors) in the
+future.
+
+For the moment, an easy way is to just drag the entire `preferences` folder into
+your own Django project and use it as if it was a Django app. Note you will need
+to uninstall the original django-preferences app before you do this.
+
+Provides singleton admin views for Preferences objects and a simple interface to
+preference values. Singleton views ensure only one preference instance per site
+is available for each ``Preferences`` class.
 
 ..
 
