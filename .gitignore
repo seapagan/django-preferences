@@ -8,3 +8,5 @@ atlassian-ide-plugin.xml
 .idea/
 build/
 ve/
+.vscode
+.python-version
