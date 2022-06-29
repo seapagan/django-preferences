@@ -10,3 +10,4 @@ build/
 ve/
 .vscode
 .python-version
+.coverage
